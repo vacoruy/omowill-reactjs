@@ -26,6 +26,7 @@ function Home() {
     const [infoData, setInfo] = useState([]);
 
     useEffect(() => {
+        console.log(process.env.REACT_APP_API_URL)
 
         const getInfo = async () => {
             setSpinnerFlg(true);

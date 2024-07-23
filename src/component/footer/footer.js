@@ -12,7 +12,7 @@ function Footer() {
             <div className='d-flex justify-content-between flex-column footer-logo-row order-2 order-md-1'>
                 <div className='footer-logo-wrap'>
                     <img alt="footerImg" src={logo} />
-                    <p className='en footer-copy-writer'>©OMOWILL All Rights Reserved</p>
+                    <h6 className='en footer-copy-writer'>©OMOWILL All Rights Reserved</h6>
                 </div>
             </div>
             <div className='d-flex gap-3 footer-content order-1 order-md-2'>
