@@ -1,0 +1,33 @@
+.contact-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    min-height: 100vh;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.contact-container input, .contact-container textarea, .contact-container button {
+    margin-top: 50px;
+}
+
+.contact-container button {
+    margin-inline: auto;
+    padding: 10px 100px;
+}
+
+.contact-img {
+    width: 60%;
+}
+
+@media (max-width: 991px) {
+    .contact-container {
+        width: 100%;
+    }
+    .contact-img {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+.info-list-container {
+    margin-top: 100px;
+    padding: 130px 75px 70px;
+}
+
+.info-header {
+    margin-bottom: 40px;
+}
+
+
+.info-list-content {
+    margin-bottom: 70px;
+}
+
+.info-content-header {
+    /* margin: 0 0 50px; */
+    margin: 0px;
+    padding: 0 0 50px;
+    border-bottom: 1px solid var(--secondary);
+}
+
+
+.info-body {
+    padding: 60px 40px;
+    background-color: var(--secondary-opacity);    
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}

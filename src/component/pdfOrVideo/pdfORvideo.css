@@ -1,0 +1,11 @@
+.video-pdf-home {
+    margin-top: 100px;
+    height: 400px;
+    background-color: aquamarine;
+}
+
+.pdf-open:hover {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-decoration: underline;
+}

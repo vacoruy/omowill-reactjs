@@ -1,0 +1,33 @@
+.privacy-container {
+    display: flex;    
+    margin-top: 100px;
+    padding: 110px 70px 0;
+    position: relative;
+}
+
+.privacy-header-title, .privacy-header-sub-title {
+    margin-bottom: 30px;
+}
+
+.privacy-title-des {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: justify;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2.3em;
+}
+
+.privacy-list-content, .privacy-content {
+    margin: 30px 0px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.privacy-title-des .link {
+    color: var(--primary);
+}
+
+.no-border-bottom {
+    border: 0px;
+}

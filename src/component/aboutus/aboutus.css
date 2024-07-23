@@ -1,0 +1,27 @@
+.about-container {
+    margin-top: 100px;
+    padding: 130px 75px 70px;
+    text-align: center;
+}
+
+.trust-family {
+    margin-top: 100px;    
+}
+
+.trust-content {
+    margin-top: 70px;
+}
+
+.trust-content .card {
+    min-width: 33.333%;
+    background: rgba(255, 255, 255, 0.7);    
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.trust-content .card-body {
+    padding: 40px;
+    text-align: left;
+}

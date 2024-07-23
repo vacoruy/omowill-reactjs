@@ -1,0 +1,386 @@
+.my-container {
+    display: flex;
+    width: 100%;
+    background-image: url(/public/assets/img/back.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* height: calc(100vh - 100px); */
+    margin-top: 100px;
+    padding: 40px 10px;
+}
+
+.my-sidebar-left {
+    min-width: 360px;
+    margin: 0px 0px 60px;
+    padding: 30px 5px 60px 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 0px;
+    position: relative;
+}
+
+.my-sidebar-left .nav-tabs {
+    border: 0px;
+}
+
+.my-sidebar-left .nav-item {
+    justify-content: left;
+    width: 100%;
+    background-color: transparent;
+    padding: 0px 25px;
+    margin-bottom: 10px;
+    line-height: 80px;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+}
+
+.my-sidebar-left .nav-item a {
+    padding: 0px !important;
+    width: 100%;
+    background-color: transparent !important;
+    color: var(--primary);
+    display: block;
+    border: 0px;
+    border-bottom: 1px solid #eee !important;
+}
+
+.my-sidebar-left .nav-item .active {
+    /* box-shadow: 0 0 0 2px #30293d; */
+    border-bottom: 1px solid var(--primary) !important;
+}
+
+
+.my-content-title {
+    border: 1px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.my-sub-tabs-header {
+    border: 0px;
+}
+
+.my-sub-tabs-header .nav-item {
+    background-color: transparent;
+    margin: 0px;
+}
+
+.my-sub-tabs-header .nav-item a {
+    border: 1px solid var(--secondary) !important;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 22px;
+    padding-bottom: 22px;
+    color: var(--primary);
+    border-radius: 0px;
+}
+
+.my-sub-tabs-header .nav-item .active {
+    background-color: transparent;
+    border-bottom: 1px solid transparent !important;
+}
+
+.my-card-container {
+    max-width: 33.3333333333333333333%;
+    position: relative;
+}
+
+.my-card-container .card-body {
+    position: relative;
+}
+
+.card-pattern {
+    position: absolute;
+    font-size: 100px !important;
+    font-weight: 600 !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #41464b42;
+    line-height: 1.8em !important;
+    width: 100%;
+    text-align: center !important;
+    margin-top: -20px;
+}
+
+.my-content-card {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);    
+}
+
+.edit-my-content {
+    width: 34%;
+}
+
+.my-content-card iframe {
+    border-radius: 8px;
+    height: 260px;
+}
+
+.my-content-card .card-title {
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.8em;
+}
+
+.update-date {
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.my-card-des {
+    font-size: 14px;    
+    line-height: 1.8em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.my-content-card a {
+    margin: 30px 0 0 0;
+}
+
+.my-content-card .card-body {
+    margin-top: 10px;
+}
+
+.guide {
+    text-align: justify;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2.3em;    
+}
+
+.update-my-video {    
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, .125);
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+    margin: 8px 0px 8px 10px !important
+}
+
+.update-my-video .form {
+    width: 65%;
+}
+
+.update-my-video .input-group {
+    margin-bottom: 22px;
+}
+
+.update-my-video .input-group-text {
+    border: 0px;
+    background-color: transparent;
+    width: 120px;
+}
+
+.update-my-video .form-control, .update-my-video .form-select {
+    background-color: transparent;
+}
+
+.update-my-video .form-select, .update-my-video .form-select:focus {    
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom:  1px solid #ccc !important; 
+    box-shadow: none;
+}
+
+.law-man {
+    margin-left: 20px;
+    border-left: 1px solid #ccc !important;
+    border-radius: 8px;
+}
+
+.my-vidoe-ms {
+    margin-left: 20px !important;
+}
+
+.born-list .list-group-item {
+    border: 0px;
+    padding: 60px 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.born-info .form-control {
+    background-color: transparent;
+}
+
+
+/* .born-info .name {
+    padding: 0;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.8em;
+    background-color: transparent;
+    border: 0px;
+}
+
+.born-info .name-input {    
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.8em;
+    background-color: transparent;
+    border: 0px;
+    margin-left: 20px;
+} */
+
+.modal-header {
+    padding: 30px;
+}
+
+.modal-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+.modal-body {
+    padding: 50px 10px 30px !important;
+}
+
+.modal-content {
+    background-image: url(/public/assets/img/back.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.9;
+}
+
+.modal .input-group {
+    margin-bottom: 15px;
+}
+
+.modal .form-control {
+    background-color: transparent;    
+}
+
+.modal .input-group-text {
+    background-color: transparent;
+    border: 0px;
+    font-weight: 500;
+    width: 120px;
+}
+
+.modal-footer {
+    padding-inline: 70px;
+}
+
+.modal .form-select {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid #ccc !important;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.profile-setting {
+    margin: 0px 0px 60px;
+    padding: 60px 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 0px;
+    position: relative;
+}
+
+.profile-setting .form {
+    margin-top: 60px;
+    width: 100% !important;
+    max-width: 600px;
+}
+
+.profile-setting .form .input-group {
+    margin-bottom: 15px;
+}
+
+.profile-setting .form .form-control, .profile-setting .form .input-group-text {
+    background-color: transparent;
+}
+
+.profile-setting .form .input-group-text {
+    background-color: transparent;
+    border: 0px;
+    width: 140px;
+}
+
+.make-will {
+    margin: 0px 0px 60px;
+    padding: 60px 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 0px;
+    position: relative;
+}
+
+.make-will a {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.make-will .form {
+    width: 100% !important;
+    max-width: 600px;
+}
+
+.make-will .form .input-group {
+    margin-bottom: 15px;
+}
+
+.make-will .form .form-control, .make-will .form .input-group-text {
+    background-color: transparent;
+}
+
+.make-will .form .input-group-text {
+    background-color: transparent;
+    border: 0px;
+    width: 140px;
+}
+
+.make-will .form-select {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid #ccc !important;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.dlsabled_form {
+    background-color: var(--secondary) !important;
+}
+
+.my-pdf iframe {
+    border: 0px;
+    border-radius: 0px;
+    margin-bottom: 5px;
+}
+
+.sub-form {
+    padding-inline: 10px;
+}
+
+.btn-spinner .spinner-border {
+    width: 20px !important;
+    height: 20px !important; 
+    margin-right: 20px !important;
+}
+

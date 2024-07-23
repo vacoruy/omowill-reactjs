@@ -1,0 +1,21 @@
+@media (max-width:991px) {
+    .forget-title-respose{
+        margin-top: 60px !important;
+    }
+
+    .forget-emailaddress-response{
+        margin-top: 50px;
+    }
+
+    .forget-btn-respose{
+        margin-top: 80px !important;
+    }
+
+    .forget-register-respose{
+        margin-top: 50px !important;
+    }
+}
+
+.forgot-pwd .card {
+    height: 60vh !important;
+}

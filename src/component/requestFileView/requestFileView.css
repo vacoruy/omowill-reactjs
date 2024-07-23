@@ -1,0 +1,109 @@
+.request-view {
+    /* background-position: center center; */
+    margin-top: 120px;
+    padding: 60px 120px;
+}
+
+.btn-next,
+.btn-contact {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.8em;
+    width: 150px;
+    font-size: 18px !important;
+    padding: 5px;
+    margin-top: 30px;
+
+}
+
+.btn-contact {
+    border: 1px solid var(--primary) !important;
+    margin-left: 20px;
+}
+
+.request-pdf-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(/public/assets/img/back.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.request-pdf-form .form-group {
+    text-align: center;
+    width: 70%;
+}
+
+.request-pdf-form .form-control {
+    background-color: transparent !important;
+
+    margin-bottom: 25px;
+}
+
+.request-pdf-form .input-group-text {
+    height: 37px;
+    background: transparent;
+    border: 0px;
+}
+
+.request-pdf-form .terms-text {
+    text-align: left;
+    border: 0px;
+    cursor: pointer;
+}
+
+.req-video-view {
+    margin-top: 100px;
+    padding: 40px 60px;
+    
+    background-image: url(/public/assets/img/back.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: calc(100vh - 100px - 230px);
+}
+
+.req-video-view tr {
+    cursor: pointer;
+}
+
+.page-item.disabled .page-link {
+    background-color: var(--secondary);
+}
+
+
+@media (max-width: 1550px) {
+    .request-pdf-form .form-group {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .request-pdf-form .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .request-view {
+        padding: 40px;
+    }
+
+    .request-pdf-form {
+        margin-bottom: 20px;
+        padding-inline: 40px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .request-view {
+        padding: 20px;
+    }
+
+    .request-pdf-form {
+        padding-inline: 15px !important;
+    }
+}

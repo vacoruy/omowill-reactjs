@@ -1,0 +1,275 @@
+.ability {
+    margin-top: -150px;
+}
+
+.ability-container, .booking-header-container, .info-container, .info-content {
+    padding-inline: 70px;
+    margin-top: 100px;
+}
+
+.card-number {
+    color: #41464b42;
+    font-weight: 600;
+    font-size: 200px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    margin-top: -35px;
+}
+
+@media (max-width: 991px) {
+    .ability-container, .booking-header-content, .info-container, .info-content {
+        padding-inline: 10px;
+    }
+    .ability-card-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 991px) {
+    .price-card-content {
+        flex-direction: column;
+    }
+
+    .price-container .price-card-content .price-card {
+        width: 100%;
+    }
+
+    .ability-response{
+        margin-top: 55px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .ability {
+        margin-top: 0px;
+    }
+}
+
+.reason-container {
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+}
+
+.reason-container .reason-right-content {
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .reason-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .reason-container .reason-content {
+        order: 2;
+        width: 100%;
+    }
+
+    .reason-container .reason-right-content {
+        width: 100%;
+    }
+}
+
+.home-intro img {
+    height: 42px;
+}
+
+.home-intro button {
+    height: 40px;
+    /* padding-inline: 40px; */
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100% !important;
+}
+
+.home-ability {
+    text-align: center;
+}
+
+.home-ability img {
+    height: 33px;
+    margin-top: 10px;
+}
+
+.ability-card-content .border {
+    border: #dcdcdc solid 1px !important;
+}
+
+.home-ability .way_learning_detail {
+    line-height: 2.2em;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 0 60px;
+}
+
+.card-content {
+    padding: 3rem;
+}
+
+.card-bottom {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.arrow-btn {
+    margin-top: 30px;
+}
+
+.booking-header-container {
+    margin-bottom: 100px;
+}
+
+
+.booking-header-container img {
+    width: 340px;
+    margin-top: 55px;
+}
+
+.booking-header-container button {
+    margin-top: 70px;
+    width: 240px;
+    height: 53px;
+    font-size: 14px;
+}
+
+.info-title-container {
+    margin-top: -20px;
+    position: absolute;
+}
+
+.info-title {
+    margin: 0 0 13px -3px;
+    padding: 0;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.info-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.info-content .list-group-item {
+    background-color: transparent;
+    padding: 60px 30px;
+    color: #363030;
+    transition: background-color 0.4s ease;
+}
+
+.info-content .list-group-item:hover {
+    background-color: lightgrey;
+}
+
+.info-date {
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: 50px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    line-height: 1;
+}
+
+.info-year {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    color: #363030;
+    padding: 0 20px 0 0;
+}
+
+.info-detail-title {
+    font-size: 16px;
+    line-height: 2em;
+}
+.info-detail-subTitle {
+    font-size: 13px;
+    line-height: 2em;
+    margin: 5px 0 0;    
+}
+.info-date-area {
+    width: 200px;
+}
+
+.ability-detail-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0 30px 0 0;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+.ability-detail-link:hover {
+    color: #000;
+    
+}
+
+.ability-detail-link i {
+    font-size: 18px;
+}
+
+.sample-pattens-row {
+    text-align: center;
+    padding-inline: 75px;
+    margin-top: 70px;
+}
+
+.sample-pattens-row .nav-item {
+    margin: 0px !important;
+}
+
+.sample-pattens-row .nav-item a {
+    color: #212529;
+}
+
+.sample-pattens-row .nav-tabs {
+    border: 0px;
+}
+
+.sample-pattens-row .nav-link {
+    border: 1px solid var(--secondary);
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.sample-pattens-row .nav-link:active, .sample-pattens-row .active, .sample-pattens-row .active:hover {
+    background-color: transparent !important;
+}
+
+.sample-pattens-row .nav-link:hover {
+    color: black;
+}
+
+.sample-pattens-row .tab-pane {
+    padding: 70px 0px;
+    position: relative;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.view-pdf-row {
+    position: absolute;
+    top: 85px;
+    z-index: 2;
+    width: 100%;
+    width: 75%;
+    text-align: right;
+}
+
+.view-pdf-btn a {
+    color: white;
+}
+
+.sample-video {
+    width: 25%;
+}
+
+.sample-desc {
+    margin: auto;
+    text-align: left;
+}
+
+.sample-desc h6{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2.3em;
+}

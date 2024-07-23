@@ -1,0 +1,855 @@
+:root {
+  --primary: #363030;
+  --secondary: rgba(238, 238, 238, 1);
+  --secondary-opacity: rgba(238, 238, 238, 0.7);
+  --hover: rgba(238, 238, 238, 0.5);
+  --white-hover: rgba(255, 255, 255, 0.7);
+  --bg-white-opacity: rgba(255, 255, 255, 0.5);
+  --bg-nav-stop: rgba(255, 255, 255, 1);
+  --bg-nav-scroll: rgba(238, 238, 238, 0.8);
+}
+
+body {
+  /* font-family: NotoSan, sans-serif !important; */
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.en {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 100px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+h3 {
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+h5 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+  line-height: 2.2em;
+}
+
+h6 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+  line-height: 2em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--primary);
+}
+
+a>button>h6 {
+  color: white;
+}
+
+input,
+input:hover,
+input:focus,
+input:focus-visible,
+input:active,
+textarea,
+textarea:hover,
+textarea:focus,
+textarea:focus-visible,
+textarea:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  border-radius: 0px !important;
+  padding-bottom: 5px !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.btn-default {
+  border: 1px solid var(--primary);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus-visible .btn-primary::after {
+  background-color: var(--primary);
+  padding-inline: 25px;
+  font-size: 15px;
+  border: 0px !important;
+  border-radius: 0px;
+}
+
+/* Change active color */
+.btn-primary.active,
+.btn-primary:focus,
+.btn-primary:active,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #6c6c6c;
+  border: 0px !important;
+}
+
+/* Change hover color */
+.btn-primary:hover {
+  background-color: #6c6c6c;
+  border: 0px !important;
+}
+
+.btn-primary:disabled {
+  background-color: #a0a0a0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.arrow-btn {
+  background-color: var(--primary);
+  width: 50px;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.opacity-3 {
+  opacity: 0.3;
+}
+
+.w-fit-content {
+  width: fit-content !important;
+}
+
+input[type="checkbox"] {
+  accent-color: rgb(204, 204, 204) !important;
+}
+
+.navbar .btn-primary {
+  border-radius: 30px;
+}
+
+.main-container {
+  padding-top: 100px;
+}
+
+.ability-card-content .card-content {
+  min-width: 33.33%
+}
+
+.gotoTop {
+  padding: 10px 15px;
+  font-size: 18px;
+  position: fixed;
+  bottom: 55px;
+  right: 55px;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #30293d;
+}
+
+.gotoTop:hover {
+  box-shadow: 0 0 0 2px #30293d;
+  transition: box-shadow 0.4s ease;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(238, 238, 238, 0.5);
+  z-index: 9999;
+}
+
+.spinner-border {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.spinner-grow-sm {
+  width: 5px;
+  height: 5px;
+  margin: 19px 4px 0px;
+}
+
+.spinner-grow-1 {
+  animation: 1s linear infinite spinner-grow;
+}
+
+.spinner-grow-2 {
+  animation: 1.3s linear infinite spinner-grow;
+}
+
+.spinner-grow-3 {
+  animation: 1.6s linear infinite spinner-grow;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+.born-pdf-field {
+  min-width: 30%;
+}
+
+@media (max-width: 1720px) {
+  .service-tab-content {
+    padding-inline: 100px !important;
+  }
+
+  .sidebar-left {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .service-tab-content {
+    padding-inline: 75px !important;
+  }
+
+  .sidebar-toggle {
+    display: inherit;
+  }
+
+  .sidebar-left {
+    position: absolute;
+    margin-top: 143px;
+    z-index: 2;
+    left: -360px;
+    transition: left 0.4s ease;
+  }
+
+  .sidebar-detail-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1445px) {
+  .my-sidebar-left {
+    min-width: 280px;
+    padding: 30px 0px 60px 0px;
+  }
+
+  .navbar {
+    padding-inline: 0px !important;
+  }
+
+  .ability-container,
+  .booking-header-container,
+  .info-content {
+    padding-inline: 25px;
+  }
+
+  .footer-container {
+    padding-inline: 40px;
+  }
+
+  .service-tab-content {
+    padding-inline: 30px !important;
+  }
+
+  .sidebar-detail-content {
+    width: 90%;
+  }
+
+  .sample-pattens-row {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-width: 1355px) {
+
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-link button {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 1320px) {
+
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-link button {
+    /* font-size: 13px !important; */
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .my-container {
+    flex-direction: column !important;
+  }
+
+  .my-sidebar-left {
+    margin: 0px 20px;
+    padding: 20px 0px;
+  }
+
+  .my-tab-content .tab-pane {
+    margin-top: 35px;
+    max-width: 100%;
+    padding: 0px 20px;
+  }
+
+  .my-sidebar-left .nav-item {
+    line-height: 65px;
+  }
+
+  .auth-form-box {
+    margin-top: 100px;
+  }
+
+  .auth-home .card {
+    max-width: 100%;
+  }
+
+  .navbar-collapse {
+    background-color: transparent !important;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .home-intro {
+    text-align: center;
+  }
+
+  .home-reg-txt {
+    margin-top: 20px;
+  }
+
+  .card-content {
+    padding: 2em;
+  }
+
+  .price-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0px;
+    margin-top: 100px;
+  }
+
+  .booking-header-container,
+  .info-content {
+    margin-inline: 0px;
+    max-width: 100% !important;
+  }
+
+  .info-container {
+    padding-inline: 25px;
+  }
+
+  .info-content {
+    padding-inline: 0px;
+  }
+
+  .info-date-area {
+    width: 180px;
+  }
+
+  .auth-container {
+    height: auto;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+
+  .sample-pattens-row {
+    /* margin-inline: 0px; */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0px;
+    padding-inline: 0px;
+  }
+
+  .faq-lg-txt {
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .death-items-list {
+    flex-direction: column;
+  }
+
+  .death-items-list .my-card-container {
+    max-width: 100% !important;
+  }
+
+  .my-tab-content iframe {
+    height: 200px;
+  }
+
+  .my-tab-content .my-card-container iframe {
+    height: 350px;
+  }
+
+  .my-tab-content .tab-pane {
+    padding: 0px 10px;
+  }
+
+  .my-edit-card-container {
+    display: none;
+  }
+
+  .update-my-video {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .price-container {
+    margin-top: 80px;
+  }
+
+  .booking-header-container img {
+    width: 273px;
+    margin-top: 28px;
+  }
+
+  .booking-header-container button {
+    margin-top: 43px;
+    width: 192px;
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .info-content .list-group-item {
+    padding: 35px 20px;
+  }
+
+  .info-date-area {
+    width: 130px;
+  }
+
+  .info-date {
+    font-size: 35px;
+  }
+
+  .info-year {
+    padding: 0 4px 0 0px;
+  }
+
+  .info--detail-title {
+    font-size: 14px;
+  }
+
+  .info-detail-subTitle {
+    font-size: 10px;
+  }
+
+  .info-title {
+    font-size: 34px;
+  }
+
+  .service-tab-content .tab-pane {
+    padding: 170px 0px 60px;
+  }
+
+  .service-tab-box {
+    top: -50px;
+  }
+
+  .service-tab-title {
+    font-size: 80px;
+  }
+
+  .sidebar-left {
+    margin-top: 119px;
+  }
+
+  .info-list-container {
+    padding-inline: 25px;
+  }
+
+  .trust-content {
+    flex-direction: column;
+  }
+
+  .register-btn {
+    width: 100%;
+    margin-top: 55px;
+  }
+
+  .agreeTerms {
+    margin-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .born-list .list-group-item {
+    padding: 40px;
+  }
+
+  .update-my-video .form {
+    width: 85%;
+  }
+
+  .my-tab-content iframe {
+    height: 350px;
+  }
+
+  .navbar-nav {
+    margin-top: 20px;
+  }
+
+  .nav-item {
+    margin: 7px;
+  }
+
+  .home-ability .way_learning_detail {
+    padding: 0 0 40px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  .home-ability img {
+    height: 24px;
+    margin-top: 6px;
+  }
+
+  .booking-header-container img {
+    width: 215px;
+    margin-top: 24px;
+  }
+
+  .booking-header-container button {
+    margin-top: 32px;
+    width: 150px;
+    height: 33px;
+    font-size: 11px;
+  }
+
+  .info-flex {
+    flex-direction: column;
+  }
+
+  .info-content {
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+
+  .info-content .list-group-item {
+    padding: 16px 10px;
+  }
+
+  .info-container .arrow-btn {
+    width: 39px;
+    padding: 16px;
+    margin-top: -10px !important;
+  }
+
+  .info-title-container {
+    margin-top: -14px;
+  }
+
+  .info-title {
+    font-size: 26px;
+  }
+
+  .info-date {
+    font-size: 30px;
+    margin-bottom: 11px;
+  }
+
+  .footer-logo-row {
+    text-align: center;
+    margin: 40px auto 0;
+  }
+
+  .footer-copy-writer {
+    text-align: center;
+  }
+
+  .faq-contact a {
+    width: 100%;
+  }
+
+  .about-container {
+    padding: 100px 30px 70px;
+    max-width: 100%;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .make-will {
+    padding: 60px 20px;
+  }
+
+  .profile-setting {
+    padding: 60px 20px;
+  }
+
+  .born-list .list-group-item {
+    padding: 20px;
+  }
+
+  .born-list .list-group-item iframe {
+    height: 260px;
+  }
+
+  .my-tab-content .tab-pane {
+    padding: 0px;
+  }
+
+  .my-sidebar-left {
+    margin: 0px;
+  }
+
+  .flex-logo {
+    padding-inline: 0px;
+  }
+
+  .update-my-video {
+    margin: 8px 0px 8px 0px !important;
+  }
+
+  .home-reg-txt {
+    margin-top: 15px;
+  }
+
+  .home-intro img {
+    height: 35px;
+  }
+
+
+
+  .home-ability img {
+    height: 22px;
+    margin-top: 5px;
+  }
+
+  .home-ability .way_learning_detail {
+    font-size: 14px;
+    padding: 0 0 30px;
+  }
+
+  .card-content {
+    padding: 1em;
+  }
+
+  .card-bottom {
+    margin: 64px 0 10px;
+  }
+
+  .booking-header-container {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+  }
+
+  .booking-header-container img {
+    width: 174px;
+    margin-top: 20px;
+  }
+
+  .booking-header-container button {
+    margin-top: 25px;
+    width: 125px;
+    height: 30px;
+    font-size: 9px;
+  }
+
+  .info-content .list-group-item {
+    padding: 34px 10px;
+  }
+
+  .info-content {
+    padding-top: 90px;
+    padding-bottom: 65px;
+  }
+
+  .info-date {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 0 17px;
+  }
+
+  .info-year {
+    padding: 0 10px 0 0;
+    font-size: 16px;
+  }
+
+  .info--detail-title {
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+
+  .info-detail-subTitle {
+    margin: 7px 0 0;
+    font-size: 12px;
+  }
+
+  .info-container .arrow-btn {
+    position: absolute;
+    bottom: 27px;
+    right: 16px;
+  }
+
+  .contact-container input,
+  .contact-container textarea,
+  .contact-container button {
+    margin-top: 40px;
+  }
+
+  .contact-container button {
+    width: 100%;
+  }
+
+  .gotoTop {
+    padding: 7px 11px;
+    font-size: 12px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .info-list-container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+    width: 180px;
+  }
+
+  .nav-link-button {
+    margin: 7px;
+  }
+
+  .nav-link-button .nav-link {
+    padding: 0px;
+  }
+
+  .update-my-video .form {
+    width: 90%;
+  }
+
+  .update-my-video .input-group-text {
+    width: 100px;
+  }
+
+  .home-intro img {
+    height: 29px;
+  }
+  .ability-container,
+  .booking-header-container {
+    margin-top: 70px;
+  }
+
+  .home-ability img {
+    height: 18px;
+    margin-top: 4px;
+  }
+
+  .home-ability .way_learning_detail {
+    font-size: 12px;
+  }
+
+  .service-description {
+    padding: 100px 60px 0;
+  }
+
+  .service-des-detail {
+    padding-right: 105px;
+  }
+
+  .service-tab-title {
+    font-size: 60px;
+  }
+
+  .service-tab-link-title {
+    font-size: 13px;
+  }
+
+  .service-tab-box {
+    top: -39px;
+  }
+
+  .sidebar-left {
+    margin-top: 102px;
+  }
+
+  .faq-lg-txt {
+    padding-right: 40px;
+    padding-top: 0px;
+  }
+
+  .faq-content-row {
+    padding-right: 75px;
+  }
+}

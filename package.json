@@ -1,0 +1,82 @@
+{
+  "name": "omowill",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@pdf-lib/standard-fonts": "^1.0.0",
+    "@react-aria/ssr": "^3.9.3",
+    "@react-pdf/renderer": "^3.4.4",
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.5.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "archiver": "^7.0.1",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
+    "express-pino-logger": "^7.0.0",
+    "http-proxy-middleware": "^3.0.0",
+    "jquery": "^3.7.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.7",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.1.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.2.67",
+    "pdfkit": "^0.15.0",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.2",
+    "react-cookie": "^7.1.4",
+    "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
+    "react-pdf": "^8.0.2",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.30.2",
+    "react-square-web-payments-sdk": "^3.2.1",
+    "react-toastify": "^10.0.5",
+    "sass": "^1.76.0",
+    "slick-carousel": "^1.8.1",
+    "stripe": "^15.10.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node-env-run server --exec nodemon | pino-colada",
+    "dev": "run-p server start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.24.5",
+    "node-env-run": "^4.0.2",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^2.2.2",
+    "react-app-rewired": "^2.2.1"
+  }
+}
