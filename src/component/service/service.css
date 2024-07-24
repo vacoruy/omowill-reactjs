@@ -24,10 +24,19 @@
     justify-content: center;
 }
 
-.service-des-title {
+.service-des-logo-title h1 {
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 1;
+    writing-mode: vertical-rl;
+    margin-top: 9px;
+}
+
+/* .service-des-title {
     text-align: center;   
     margin-bottom: 60px;
-}
+} */
 
 .service-des-detail {
     box-sizing: border-box;

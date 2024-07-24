@@ -68,7 +68,7 @@ function DeathVideo(props) {
     return (
         <div>
             <div className="px-2 mb-3">
-                <h2 className="fw-bold">動画管理</h2>
+                <h3>動画管理</h3>
             </div>
             <div>
                 {
@@ -85,10 +85,10 @@ function DeathVideo(props) {
                                                 allowFullScreen
                                             ></iframe>
                                             <div className="card-body">
-                                                <p className="card-text update-date">更新日: {ele.update_date} </p>
-                                                <h3 className="card-title fw-bold">{ele.lawyer_relation}: {ele.lawyer_name}</h3>
-                                                <h5 className="fw-bold">生年月日 : {ele.lawyer_birth}</h5>
-                                                <p className='my-card-des'>{ele.description}</p>
+                                                <h5 className="card-text"><span className='fw-bold'>更新日:&nbsp;</span>&nbsp;&nbsp;{ele.update_date} </h5>
+                                                <h5><span className='fw-bold'>{ele.lawyer_relation}:</span> {ele.lawyer_name}</h5>
+                                                <h5 className="fw-bold"><span>生年月日:&nbsp;</span> {ele.lawyer_birth}</h5>
+                                                <h6 className='mt-3'>{ele.description}</h6>
                                                 <div className='d-flex justify-content-end mt-4'>
                                                     <button className="btn btn-primary" onClick={() => {
                                                         setEditFlg(true);
@@ -120,8 +120,8 @@ function DeathVideo(props) {
                                         allowFullScreen
                                     ></iframe>
                                     <div className="card-body">
-                                        <p className="card-text update-date">更新日: {userVideo.update_date}</p>
-                                        <h3 className="card-title fw-bold">{userVideo.lawyer_relation}:{userVideo.lawyer_name}</h3>
+                                        <h5><span className='fw-bold'>更新日:&nbsp;</span>&nbsp;&nbsp;{userVideo.update_date}</h5>
+                                        <h5><span className='fw-bold'>{userVideo.lawyer_relation}:</span>{userVideo.lawyer_name}</h5>
                                         <h5 className="fw-bold">生年月日 : {userVideo.lawyer_birth}</h5>
                                         <p className='my-card-des'>{userVideo.description}</p>
                                         <div className='d-flex justify-content-end mt-4'>

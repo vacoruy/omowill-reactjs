@@ -36,8 +36,8 @@ function OftenQuestion() {
 
                 <div className='faq-content-row'>
                     <div className='faq-header'>
-                        <h2 className='fw-bold'>よく要求される質問</h2>
-                        <p>ユーザーが最も多く発生したリクエストを投稿します。</p>
+                        <h3>よく要求される質問</h3>
+                        <h6>ユーザーが最も多く発生したリクエストを投稿します。</h6>
                     </div>
 
                     <div className='faq-area'>
@@ -50,14 +50,14 @@ function OftenQuestion() {
                                         aria-expanded={faqFlgList[idx]}
                                         className='faq-title d-flex justify-content-between'
                                     >
-                                        <span>{item.title}</span>
+                                        <h5>{item.title}</h5>
                                         <i className={faqFlgList[idx] ? 'fa fa-chevron-up' : 'fa fa-chevron-down'} aria-hidden="true"></i>
                                     </div>
                                     <Collapse in={faqFlgList[idx]} className='faq-content'>
                                         <div id={'faq-collapse' + idx}>
-                                            <p>
+                                            <h6>
                                                 {item.content}
-                                            </p>
+                                            </h6>
                                         </div>
                                     </Collapse>
                                 </li>

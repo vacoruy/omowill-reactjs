@@ -123,15 +123,15 @@ function MakeWill(props) {
 
     return (
         <div className='make-will'>
-            <h2 className='fw-bold'>自筆証書遺言</h2>
-            <p>遺言書を記載しておけば、死後の財産分与の際に混乱を避けることができます。</p>
-            <p>遺言書を作成する場合、保管場所についても整理しておけば、探す手間が省け、手続きまでの時間を短縮することができます。</p>
-            <p>また、OMOWILLは法的な効力がないため、財産分与の割合や相続人を指定したい場合は、遺言書を作成しておくことをおすすめします。</p>
-            <p>遺言書作成の詳しい紹介は、以下のリンクからご覧いただけます。</p>
+            <h3 className="mb-5">自筆証書遺言</h3>
+            <h6>遺言書を記載しておけば、死後の財産分与の際に混乱を避けることができます。</h6><br />
+            <h6>遺言書を作成する場合、保管場所についても整理しておけば、探す手間が省け、手続きまでの時間を短縮することができます。</h6><br />
+            <h6>また、OMOWILLは法的な効力がないため、財産分与の割合や相続人を指定したい場合は、遺言書を作成しておくことをおすすめします。</h6><br />
+            <h6>遺言書作成の詳しい紹介は、以下のリンクからご覧いただけます。</h6><br />
 
-            <Link to={MakeWillPDF} className='fw-bold' target='_blank' rel='noopener noreferrer'><i className="fa fa-caret-right me-1" aria-hidden="true" target="_blank" />詳細情報</Link>
+            <Link to={MakeWillPDF} className='fw-bold' target='_blank' rel='noopener noreferrer'><h6><i className="fa fa-caret-right me-1" aria-hidden="true" target="_blank" />詳細情報</h6></Link>
 
-            <div className='d-flex justify-content-center pt-5 pb-5'>
+            <div className='d-flex justify-content-center pt-5 pb-5 mt-5'>
                 <div className='d-flex flex-column born-pdf-field'>
                     <iframe
                         title="deathVideo"

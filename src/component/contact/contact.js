@@ -40,8 +40,8 @@ function Contact() {
         <div className='d-flex justify-content-between'>
             <div className='contact-container mx-auto'>
                 <div className='w-100 d-flex flex-column'>
-                    <h2 className='fw-bold'>お問い合わせ</h2>
-                    <p>内容を入力後・送信ボタンを押してください。</p>
+                    <h3 className='fw-bold'>お問い合わせ</h3>
+                    <h6>内容を入力後・送信ボタンを押してください。</h6>
                     <input
                         type='text'
                         className='form-control w-100'

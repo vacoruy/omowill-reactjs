@@ -144,7 +144,7 @@ function BornPDF(props) {
         <div>
             <div className="px-2 mb-3 justify-content-between d-flex">
                 <h2 className="fw-bold"><span className='en'>PDF</span>管理</h2>
-                <button className="btn btn-primary" onClick={openModal}><span className='en'>PDF</span>管理</button>
+                <button className="btn btn-primary born-create-btn" onClick={openModal}><span className='en'>PDF</span>管理</button>
             </div>
 
             <div className="px-2 w-100">
@@ -165,16 +165,16 @@ function BornPDF(props) {
                                         <button className='btn btn-primary' onClick={() => window.open(pdfSampleURL, '_blank')}>詳細を表示</button>
                                     </div>
                                     <div className="born-info ps-0 ps-md-5 position-relative">
-                                        <h3 className="fw-bold">こども氏名: Akay</h3>
+                                        <h5><span className="fw-bold">こども氏名:</span> Akay</h5>
                                         <div className="d-flex justify-content-between">
-                                            <h4>生年月日: 2024-05-12</h4>
+                                            <h5><span className="fw-bold">生年月日&nbsp;:</span>&nbsp;&nbsp;&nbsp;&nbsp; 2024-05-12</h5>
                                         </div>
                                         <div className="d-flex justify-content-between">
-                                            <h4>掲載日: 2024-05-18</h4>
+                                            <h5><span className="fw-bold">掲載日 &nbsp;&nbsp;&nbsp;&nbsp;: </span>&nbsp;&nbsp;&nbsp;&nbsp;2024-05-18</h5>
                                         </div>
-                                        <p>
-                                            動画を残すには、まずYouTubeに動画をアップロードした後、Waontに戻る必要があります。 次に会員登録をし、マイページから動画を残すきっかけを選択します。 次の動画ボタンをクリック(デフォルトで選択されています。)し・受取人情報を入力します。 次にYouTubeにアップロードした動画のパスを入力し・保存ボタンをクリックすれば完了です。
-                                        </p>
+                                        <h6 className='mt-3'>
+                                            '動画を残すには、まずYouTubeに動画をアップロードした後、Waontに戻る必要があります。 次に会員登録をし、マイページから動画を残すきっかけを選択します。 次の動画ボタンをクリック(デフォルトで選択されています。)し・受取人情報を入力します。 次にYouTubeにアップロードした動画のパスを入力し・保存ボタンをクリックすれば完了です。
+                                        </h6>
                                         <p className='card-pattern'>見 本</p>
                                     </div>
                                 </li>
@@ -192,14 +192,14 @@ function BornPDF(props) {
                                         <button className='btn btn-primary' onClick={() => window.open(ele.url, '_blank')}>詳細を表示</button>
                                     </div>
                                     <div className="born-info ps-0 ps-md-5">
-                                        <h3 className="fw-bold">こども氏名: {ele.name}</h3>
+                                        <h5><span className="fw-bold">こども氏名:</span> {ele.name}</h5>
                                         <div className="d-flex justify-content-between">
-                                            <h4>生年月日&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp; {ele.birth}</h4>
+                                            <h5><span className="fw-bold">生年月日&nbsp;:</span>&nbsp;&nbsp;&nbsp;&nbsp; {ele.birth}</h5>
                                         </div>
                                         <div className="d-flex justify-content-between">
-                                            <h4>掲載日 &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;{ele.update_date}</h4>
+                                            <h5><span className="fw-bold">掲載日 &nbsp;&nbsp;&nbsp;&nbsp;: </span>&nbsp;&nbsp;&nbsp;&nbsp;{ele.update_date}</h5>
                                         </div>
-                                        <p>{ele.description}</p>
+                                        <h6>{ele.description}</h6>
                                     </div>
                                 </li>
                             );

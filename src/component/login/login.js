@@ -61,7 +61,7 @@ function Login() {
 
                 setLoginInfo(authInfo);
                 setCookie(authInfo);
-                
+
                 await getUserData();
 
                 navigate('/');
@@ -76,17 +76,15 @@ function Login() {
             <div className='reason-container container-fluid w-100 d-flex auth-container'>
                 <div className='col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center reason-content auth-content order-1'>
                     <div className='d-flex justify-content-between flex-column home-intro'>
-                        <h2 className='fw-bold'>震災/津波/災害/戦争</h2>
-                        <p>
-                            東日本大震災で・写真や手紙など
-                            <br />
-                            本来・想いを残してきたツールは
-                            <br />
-                            津波で跡形もなく消えてなくなる
-                        </p>
+                        <h3 className='mb-4'>震災/津波/災害/戦争</h3>
+                        <h5>
+                            東日本大震災で・写真や手紙など <br />
+                            本来・想いを残してきたツールは<br />
+                            津波で跡形もなく消えてなくなる<br />
+                        </h5>
 
-                        <h1 className='fw-bold'><img alt="img" src={logo} /></h1>
-                        <p className='fw-bold pt-2 home-reg-txt'>想いを「今」WEB上に残しておく</p>
+                        <h3 className='en mt-5'>OMOWILL</h3>
+                        <h5>想いを「今」WEB上に残しておく</h5>
                     </div>
                 </div>
                 <div className='col-sm-12 col-md-12 col-lg-6 px-5 order-2 auth-home auth-form-box'>
@@ -128,7 +126,7 @@ function Login() {
                                 </Link>
                             </div>
                             <div className='w-100 text-center auth-btn-response'>
-                                <button type="button" className="btn btn-primary fw-bold " onClick={() => loginAction()}>ログイン</button>
+                                <button type="button" className="btn btn-primary fw-bold btn-login" onClick={() => loginAction()}>ログイン</button>
                             </div>
                             <div className='d-flex justify-content-between auth-redirect-link'>
                                 <Link to='/forgot'>

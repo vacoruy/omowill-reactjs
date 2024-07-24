@@ -272,7 +272,7 @@ function RequestFileView() {
                         <div className='row'>
                             <div className='col-12 col-md-6'>
                                 <div className="card p-5 request-pdf-form">
-                                    <h3 className="card-title fw-bold">動画・PDF等の登録確認申請</h3>
+                                    <h3 className='mb-5'>動画・PDF等の登録確認申請</h3>
                                     <div className='form-group'>
                                         <div className="input-group">
                                             <input
@@ -358,7 +358,7 @@ function RequestFileView() {
                             </div>
                             <div className='col-12 col-md-6'>
                                 <div className="card p-5 request-pdf-form" style={{ zIndex: 1 }} >
-                                    <h3 className="card-title fw-bold">動画・PDF等の登録確認資料</h3>
+                                    <h3 className="mb-5">動画・PDF等の登録確認資料</h3>
                                     <div className='form-group'>
                                         <div className="input-group">
                                             <input
@@ -445,7 +445,7 @@ function RequestFileView() {
                         <div className='row justify-content-center'>
                             <div className='col-12 col-sm-10 col-md-8 col-lg-6'>
                                 <div className="card p-5 request-pdf-form">
-                                    <h3 className="card-title fw-bold">本人確認資料</h3>
+                                    <h3 className="mb-5">本人確認資料</h3>
                                     <div className='form-group'>
                                         <div className="input-group">
                                             <input
@@ -565,7 +565,7 @@ function RequestFileView() {
                         <div className='row justify-content-center'>
                             <div className='col-12 col-sm-10 col-md-8 col-lg-6'>
                                 <div className="card p-5 request-pdf-form">
-                                    <h3 className="card-title fw-bold">300円有料手続決済</h3>
+                                    <h3 className="mb-5">300円有料手続決済</h3>
                                     <div className='form-group'>
                                         {
                                             stripePromise && clientSecret && (

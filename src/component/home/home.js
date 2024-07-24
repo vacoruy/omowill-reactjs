@@ -7,7 +7,7 @@ import axios from 'axios';
 import Spinner from '../includes/spinner';
 
 // import { toast } from 'react-toastify';
-import logo from "../../assets/img/logo-pb.webp";
+// import logo from "../../assets/img/logo-pb.webp";
 import logo1 from "../../assets/img/logo1.webp";
 
 import Ability from '../ability/ability';
@@ -25,9 +25,18 @@ function Home() {
 
     const [infoData, setInfo] = useState([]);
 
-    useEffect(() => {
-        console.log(process.env.REACT_APP_API_URL)
+    const handleScrollAnimation = () => {
+        const slideElements = document.querySelectorAll('.slideanim');
+        slideElements.forEach((element) => {
+            const elementPos = element.getBoundingClientRect().top + window.scrollY;
+            const windowTop = window.scrollY;
+            if (elementPos < windowTop + 600) {
+                element.classList.add('slide');
+            }
+        });
+    };
 
+    useEffect(() => {
         const getInfo = async () => {
             setSpinnerFlg(true);
             try {
@@ -43,6 +52,8 @@ function Home() {
         };
 
         getInfo();
+
+        window.addEventListener('scroll', handleScrollAnimation);
 
     }, []);
 
@@ -72,7 +83,7 @@ function Home() {
                 <div className='col-sm-12 col-md-12 col-lg-1'></div>
                 <div className='col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center align-items-center reason-content'>
                     <div className='d-flex justify-content-between flex-column home-intro'>
-                        <h3>震災/津波/災害/戦争</h3>
+                        <h3 className='mb-4'>震災/津波/災害/戦争</h3>
                         <h5>
                             東日本大震災で・写真や手紙など <br />
                             本来・想いを残してきたツールは<br />
@@ -91,7 +102,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='ability-container'>
+            <div className='ability-container slideanim'>
                 <div className='home-intro home-ability'>
                     <div className='d-flex justify-content-center'>
                         <h3 className='en'>OMOWILL</h3>
@@ -166,7 +177,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='container ability-container price-container'>
+            <div className='container ability-container price-container slideanim'>
                 <div className='home-intro home-ability'>
                     <div className='d-flex justify-content-center'>
                         <h3>動画や手紙の閲覧について</h3>
@@ -210,7 +221,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='container booking-header-container'>
+            <div className='container booking-header-container slideanim'>
                 <div className='d-flex justify-content-between flex-column'>
                     <h3>まずは・想いを残そう!</h3>
                     <img src={logo1} alt="img" />
@@ -219,7 +230,7 @@ function Home() {
             </div>
 
 
-            <div className='bg-secondary info-container'>
+            <div className='bg-secondary info-container slideanim'>
                 <div className='info-title-container'>
                     <h3 className='fw-bold'>お知らせ</h3>
                     <h6 className='en'>Information</h6>

@@ -40,33 +40,33 @@ function Info() {
     return (
         <div className="position-relative">
             <div className='container info-list-container'>
-                <div className="info-header d-flex flex-column">
-                    <h2 className='fw-bold w-100'>お知らせ</h2>
-                    <p className='en fw-bold'>Information</p>
-                    <p>サービスチームから毎日新しいお知らせが届きます。</p>
+                <div className="info-header d-flex flex-column text-center mb-5">
+                    <h3>お知らせ</h3>
+                    <h6 className='en'>Information</h6>
+                    <h5 className="fw-bold">サービスチームから毎日新しいお知らせが届きます。</h5>
                 </div>
                 {
                     infoData === 'no data' ? (
                         <div className="info-list-content d-flex flex-column">
                             <div className="info-content-header text-center">
-                                <h3>データが存在しません</h3>
+                                <h4>データが存在しません</h4>
                             </div>
                         </div>
                     ) : (
                         infoData.map((item, idx) => (
-                            <div className="info-list-content d-flex flex-column" key={idx}>
+                            <div className="info-list-content d-flex flex-column mt-5" key={idx}>
                                 <div className="info-content-header">
-                                    <h4>
+                                    <h4 className="mb-3">
                                         {new Date(item.date).getFullYear()}&nbsp;{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}
                                     </h4>
                                     <h3>{item.title}</h3>
-                                    <p>{item.subTitle}</p>
+                                    <h6>{item.subTitle}</h6>
                                 </div>
 
                                 <div className="info-body">
-                                    <p>
+                                    <h6>
                                         {item.content}
-                                    </p>
+                                    </h6>
                                 </div>
                             </div>
                         ))

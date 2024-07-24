@@ -51,3 +51,11 @@
 .faq-content-row {
     padding-right: 150px;
 }
+
+.faq-lg-txt p {
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 1;
+    writing-mode: vertical-rl;
+}

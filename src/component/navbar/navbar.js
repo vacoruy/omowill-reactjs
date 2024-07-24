@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.webp";
 
 import { AuthContext } from '../../context/AuthProvider';
+import $ from 'jquery';
 
 import "./navbar.css";
 
@@ -13,15 +14,34 @@ function Navbar() {
 
     const [scrolled, setScrolled] = useState(false);
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     useEffect(() => {
         setAuthFlg(omowillAuth.isAuth);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
         };
 
-    }, [omowillAuth.isAuth]);
+        const updateClasses = () => {
+            if (window.innerWidth > 1200) {
+                document.querySelectorAll(".nav-link-btn1").forEach(el => el.classList.add('nav-pr-0'));
+                document.querySelectorAll(".nav-link-btn2").forEach(el => el.classList.add('nav-ps-0'));
+            } else {
+                document.querySelectorAll(".nav-link-btn1").forEach(el => el.classList.remove('nav-pr-0'));
+                document.querySelectorAll(".nav-link-btn2").forEach(el => el.classList.remove('nav-ps-0'));
+            }
+        };
+
+        updateClasses();
+
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [omowillAuth.isAuth, windowWidth]);
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -38,6 +58,11 @@ function Navbar() {
         setCookie(omowillAuth);
     }
 
+    const handleMobileMenu = () => {
+        setScrolled(false);
+        $(".nav-link-btn1").removeClass('nav-pr-0');
+        $(".nav-link-btn2").removeClass('nav-ps-0');
+    }
     return (
         <nav className="navbar navbar-expand-xl fixed-top" style={{ backgroundColor: scrolled ? 'transparent' : 'white' }}>
             <div className="container-fluid">
@@ -51,6 +76,7 @@ function Navbar() {
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavbar"
+                    onClick={handleMobileMenu}
                 >
                     <span className="fa fa-reorder"></span>
                 </button>
@@ -103,7 +129,7 @@ function Navbar() {
                         ) : (
                             <>
                                 <li className="nav-item nav-link-button">
-                                    <Link className="nav-link nav-pr-0" to="/register">
+                                    <Link className="nav-link nav-link-btn1 nav-pr-0" to="/register">
                                         <button className="btn btn-primary">
                                             <h6>
                                                 <i className="fa fa-user-plus"></i>
@@ -114,7 +140,7 @@ function Navbar() {
                                 </li>
 
                                 <li className="nav-item nav-link-button">
-                                    <Link className="nav-link nav-ps-0" to="/login">
+                                    <Link className="nav-link nav-ps-0 nav-link-btn2" to="/login">
                                         <button className="btn btn-primary">
                                             <h6>
                                                 <i className="fa fa-user"></i>

@@ -32,7 +32,7 @@ function ProfileSetting() {
 
     return (
         <div className='profile-setting'>
-            <h2 className='fw-bold'>プロフィール設定</h2>
+            <h3 className='fw-bold text-center'>プロフィール設定</h3>
 
             <div className='d-flex justify-content-center'>
                 <div className='form'>
