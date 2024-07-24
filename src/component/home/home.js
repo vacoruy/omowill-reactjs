@@ -251,7 +251,7 @@ function Home() {
                                         <Link to="/info" className="list-group-item" key={index}>
                                             <div className='d-flex info-flex'>
                                                 <div className='info-date-area'>
-                                                    <dt className='info-date'><span className='info-year'>{new Date(item.date).getFullYear()}</span>{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}</dt>
+                                                    <dt className='info-date number'><span className='info-year'>{new Date(item.date).getFullYear()}</span>{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}</dt>
                                                 </div>
                                                 <div className='flex-grow-1 pl-1'>
                                                     <div className='justify-content-between d-flex'>

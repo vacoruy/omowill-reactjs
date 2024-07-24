@@ -56,7 +56,7 @@ function Info() {
                         infoData.map((item, idx) => (
                             <div className="info-list-content d-flex flex-column mt-5" key={idx}>
                                 <div className="info-content-header">
-                                    <h4 className="mb-3">
+                                    <h4 className="mb-3 number">
                                         {new Date(item.date).getFullYear()}&nbsp;{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}
                                     </h4>
                                     <h3>{item.title}</h3>

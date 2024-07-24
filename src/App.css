@@ -7,6 +7,9 @@
     --bg-white-opacity: rgba(255, 255, 255, 0.5);
     --bg-nav-stop: rgba(255, 255, 255, 1);
     --bg-nav-scroll: rgba(238, 238, 238, 0.8);
+
+    --font-number: "Barlow Semi Condensed", sans-serif;
+    --font-en: "Barlow Semi Condensed", sans-serif;
 }
 
 body {
@@ -16,8 +19,12 @@ body {
 }
 
 .en {
-    font-family: "Barlow Semi Condensed", sans-serif;
+    font-family: var(--font-en) !important;
     font-style: normal;
+}
+
+.number {
+    font-family: var(--font-number) !important;
 }
 
 h1 {
