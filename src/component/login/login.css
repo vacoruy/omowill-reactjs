@@ -185,11 +185,11 @@
         margin-bottom: 15px !important;
     }
 
-    .auth-form-box input,
+    /* .auth-form-box input,
     .auth-input-response .form-check-label,
     .auth-btn-response {
         margin-top: 20px !important;
-    }
+    } */
 
     .auth-btn-response button {
         height: 35px;

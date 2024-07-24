@@ -14,7 +14,7 @@ function Service() {
     const { tabIdx, changeTabIdx } = useContext(ConfigContext);
     const myRef = useRef();
 
-    const [acitveSidebar, setAcitveSidebar] = useState(true); //when mobile, toggle side bar;
+    const [acitveSidebar, setAcitveSidebar] = useState(false); //when mobile, toggle side bar;
     const tabRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
     const sidebarToggle = () => {

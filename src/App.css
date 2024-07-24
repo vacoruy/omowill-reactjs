@@ -686,6 +686,10 @@ input[type="checkbox"] {
         max-width: 100%;
         margin: 0px;
     }
+    
+    .auth-redirect-link > a > p {
+        margin: 25px 10px !important;
+    }
 }
 
 @media (max-width: 576px) {
