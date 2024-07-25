@@ -21,7 +21,7 @@ function Ability() {
 
     return (
         <div className='d-flex w-100 ability-card-content'>
-            <div className='border d-flex flex-column justify-content-between card-content' >
+            <div className='border d-flex flex-column justify-content-between card-content' data-aos-delay="200" data-aos="fade-left" >
                 <div className='d-flex justify-content-between pb-5'>
                     <h6 className='en mt-4'>Main</h6>
                     <h1 className="card-number">01</h1>
@@ -34,7 +34,7 @@ function Ability() {
                     <button className='btn btn-primary bg-primary text-white' onClick={() => gotoURL("/mypage/death")}>利用する</button>
                 </div>
             </div>
-            <div className='border d-flex flex-column justify-content-between card-content'>
+            <div className='border d-flex flex-column justify-content-between card-content' data-aos-delay="250" data-aos="fade-left">
                 <div className='d-flex justify-content-between pb-5'>
                     <h6 className='en mt-4'>Main</h6>
                     <h1 className="card-number">02</h1>
@@ -47,7 +47,7 @@ function Ability() {
                     <button className='btn btn-primary bg-primary text-white' onClick={() => gotoURL("/mypage/newborn")}>利用する</button>
                 </div>
             </div>
-            <div className='border d-flex flex-column justify-content-between card-content'>
+            <div className='border d-flex flex-column justify-content-between card-content' data-aos-delay="300" data-aos="fade-left">
                 <div className='d-flex justify-content-between pb-5'>
                     <h6 className='en mt-4'>Sub</h6>
                     <h1 className="card-number">03</h1>

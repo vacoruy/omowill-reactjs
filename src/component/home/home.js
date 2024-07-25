@@ -25,16 +25,16 @@ function Home() {
 
     const [infoData, setInfo] = useState([]);
 
-    const handleScrollAnimation = () => {
-        const slideElements = document.querySelectorAll('.slideanim');
-        slideElements.forEach((element) => {
-            const elementPos = element.getBoundingClientRect().top + window.scrollY;
-            const windowTop = window.scrollY;
-            if (elementPos < windowTop + 600) {
-                element.classList.add('slide');
-            }
-        });
-    };
+    // const handleScrollAnimation = () => {
+    //     const slideElements = document.querySelectorAll('.slideanim');
+    //     slideElements.forEach((element) => {
+    //         const elementPos = element.getBoundingClientRect().top + window.scrollY;
+    //         const windowTop = window.scrollY;
+    //         if (elementPos < windowTop + 600) {
+    //             element.classList.add('slide');
+    //         }
+    //     });
+    // };
 
     useEffect(() => {
         const getInfo = async () => {
@@ -53,7 +53,7 @@ function Home() {
 
         getInfo();
 
-        window.addEventListener('scroll', handleScrollAnimation);
+        // window.addEventListener('scroll', handleScrollAnimation);
 
     }, []);
 
@@ -79,7 +79,8 @@ function Home() {
 
     return (
         <div className='position-relative'>
-            <div className='reason-container w-100 d-flex'>
+            <div className='reason-container w-100 d-flex' data-aos="fade-down"
+                data-aos-duration="2000">
                 <div className='col-sm-12 col-md-12 col-lg-1'></div>
                 <div className='col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center align-items-center reason-content'>
                     <div className='d-flex justify-content-between flex-column home-intro'>
@@ -102,8 +103,8 @@ function Home() {
                 </div>
             </div>
 
-            <div className='ability-container slideanim'>
-                <div className='home-intro home-ability'>
+            <div className='ability-container'>
+                <div className='home-intro home-ability' data-aos="fade-up">
                     <div className='d-flex justify-content-center'>
                         <h3 className='en'>OMOWILL</h3>
                         <h3>でできること</h3>
@@ -111,9 +112,12 @@ function Home() {
                     {/* <h6 className='en'>Ability</h6> */}
                     <h5 className='pb-5'>OMOWlLLでは以下の3つのことができます。</h5>
                 </div>
+
                 <Ability />
 
-                <div className='sample-pattens-row container'>
+                <div className='sample-pattens-row container' data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1500">
                     <div className="w-100">
                         <div className="w-100 d-flex mt-3">
                             <div className="w-100 border pt-4 pb-4 cursor-pointer">
@@ -177,8 +181,8 @@ function Home() {
                 </div>
             </div>
 
-            <div className='container ability-container price-container slideanim'>
-                <div className='home-intro home-ability'>
+            <div className='container ability-container price-container'>
+                <div className='home-intro home-ability' data-aos="fade-up">
                     <div className='d-flex justify-content-center'>
                         <h3>動画や手紙の閲覧について</h3>
                     </div>
@@ -186,7 +190,7 @@ function Home() {
                 </div>
 
                 <div className='d-flex w-100 ability-card-content'>
-                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content'>
+                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content' data-aos-delay="200" data-aos="fade-left">
                         <div className='d-flex justify-content-between pb-5'>
                             <h6 className='en mt-4'>Free</h6>
                             <h1 className='card-number'>01</h1>
@@ -201,7 +205,7 @@ function Home() {
                             <button className='btn btn-primary bg-primary text-white' onClick={() => gotoURL('/register')}>無料</button>
                         </div>
                     </div>
-                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content'>
+                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content' data-aos-delay="250" data-aos="fade-left">
                         <div className='d-flex justify-content-between pb-5'>
                             <h6 className='en mt-4'>Charge</h6>
                             <h1 className='card-number'>02</h1>
@@ -221,16 +225,16 @@ function Home() {
                 </div>
             </div>
 
-            <div className='container booking-header-container slideanim'>
+            {/* <div className='container booking-header-container' data-aos="fade-up">
                 <div className='d-flex justify-content-between flex-column'>
                     <h3>まずは・想いを残そう!</h3>
                     <img src={logo1} alt="img" />
                     <button className='btn btn-primary' onClick={gotoRegister}><i className='fa fa-user-plus'></i>&nbsp;&nbsp;&nbsp;ご利用登録</button>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className='bg-secondary info-container slideanim'>
+            <div className='bg-secondary info-container' data-aos="fade-up">
                 <div className='info-title-container'>
                     <h3 className='fw-bold'>お知らせ</h3>
                     <h6 className='en'>Information</h6>
@@ -248,7 +252,7 @@ function Home() {
                                     </div>
                                 ) : (
                                     infoData.map((item, index) => (
-                                        <Link to="/info" className="list-group-item" key={index}>
+                                        <Link to="/info" className="list-group-item" key={index} data-aos-delay={(index + 250) * 1.3} data-aos="fade-left">
                                             <div className='d-flex info-flex'>
                                                 <div className='info-date-area'>
                                                     <dt className='info-date number'><span className='info-year'>{new Date(item.date).getFullYear()}</span>{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}</dt>

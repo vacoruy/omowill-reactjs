@@ -36,6 +36,9 @@ import './App.css';
 import { ConfigProvider } from "./context/ConfigProvider";
 import ProtectedPaidRoute from './component/includes/ProtectedPaidRoute';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const ScrollToTop = () => {
     const { pathname } = useLocation();
 
@@ -49,6 +52,9 @@ const ScrollToTop = () => {
 
 function App() {
     // console.log(process.env.REACT_APP_API_KEY);
+
+    AOS.init();
+    
     return (
         <div className="App">
             <CookiesProvider defaultSetOptions={{ path: '/' }}>
