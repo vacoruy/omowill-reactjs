@@ -2,23 +2,24 @@
     margin-top: -150px;
 }
 
-.ability-container, .booking-header-container, .info-container, .info-content {
+.ability-container,
+.booking-header-container,
+.info-container,
+.info-content {
     padding-inline: 70px;
     margin-top: 100px;
 }
 
-.card-number {
-    color: #41464b42;
-    font-weight: 600;
-    font-size: 200px;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    margin-top: -35px;
-}
 
 @media (max-width: 991px) {
-    .ability-container, .booking-header-content, .info-container, .info-content {
+
+    .ability-container,
+    .booking-header-content,
+    .info-container,
+    .info-content {
         padding-inline: 10px;
     }
+
     .ability-card-content {
         flex-direction: column;
     }
@@ -33,7 +34,7 @@
         width: 100%;
     }
 
-    .ability-response{
+    .ability-response {
         margin-top: 55px;
     }
 }
@@ -58,6 +59,7 @@
         flex-direction: column;
         height: auto;
     }
+
     .reason-container .reason-content {
         order: 2;
         width: 100%;
@@ -75,13 +77,25 @@
 .home-intro button {
     height: 40px;
     /* padding-inline: 40px; */
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 22px;
+    margin-top: 22px;
     width: 100% !important;
+    height: 64px;
+    font-size: 13px !important;
 }
 
 .home-ability {
     text-align: center;
+}
+
+.home-ability h6 {
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.ability-des {
+    padding: 28px 0px 70px;
 }
 
 .home-ability img {
@@ -101,7 +115,8 @@
 }
 
 .card-content {
-    padding: 3rem;
+    padding: 320px 50px 25px;
+    
 }
 
 .card-bottom {
@@ -181,11 +196,13 @@
     font-size: 16px;
     line-height: 2em;
 }
+
 .info-detail-subTitle {
     font-size: 13px;
     line-height: 2em;
-    margin: 5px 0 0;    
+    margin: 5px 0 0;
 }
+
 .info-date-area {
     width: 200px;
 }
@@ -201,7 +218,7 @@
 
 .ability-detail-link:hover {
     color: #000;
-    
+
 }
 
 .ability-detail-link i {
@@ -211,7 +228,7 @@
 .sample-pattens-row {
     text-align: center;
     padding-inline: 75px;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .sample-pattens-row .nav-item {
@@ -232,7 +249,9 @@
     padding-bottom: 22px;
 }
 
-.sample-pattens-row .nav-link:active, .sample-pattens-row .active, .sample-pattens-row .active:hover {
+.sample-pattens-row .nav-link:active,
+.sample-pattens-row .active,
+.sample-pattens-row .active:hover {
     background-color: transparent !important;
 }
 
@@ -268,8 +287,30 @@
     text-align: left;
 }
 
-.sample-desc h6{
+.sample-desc h6 {
     font-weight: 500;
     font-size: 14px;
     line-height: 2.3em;
+}
+
+.en-card-title {
+    position: absolute;
+    top: 46px;
+    left: 50px;
+    margin: 0;
+    padding: 11px 0 28px;
+    text-align: left;
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card-number {
+    color: #41464b42;
+    font-weight: 600;
+    font-size: 170px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    position: absolute;
+    right: 50px;
+    top: 10px;
 }

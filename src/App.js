@@ -32,6 +32,7 @@ import PdfOrVideoView from './pages/pdfOrVidePage';
 
 
 import './App.css';
+import './App-Responsive.css';
 
 import { ConfigProvider } from "./context/ConfigProvider";
 import ProtectedPaidRoute from './component/includes/ProtectedPaidRoute';

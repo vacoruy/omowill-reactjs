@@ -25,19 +25,18 @@ function Home() {
 
     const [infoData, setInfo] = useState([]);
 
-    const [mobileFlg, setMobileFlg] = useState(false);
-
-    const handleResize = () => {
-        if (window.innerWidth < 576) {
-            setMobileFlg(true)
-        } else {
-            setMobileFlg(false);
-        }
-    };
+    // const handleScrollAnimation = () => {
+    //     const slideElements = document.querySelectorAll('.slideanim');
+    //     slideElements.forEach((element) => {
+    //         const elementPos = element.getBoundingClientRect().top + window.scrollY;
+    //         const windowTop = window.scrollY;
+    //         if (elementPos < windowTop + 600) {
+    //             element.classList.add('slide');
+    //         }
+    //     });
+    // };
 
     useEffect(() => {
-        handleResize();
-
         const getInfo = async () => {
             setSpinnerFlg(true);
             try {
@@ -54,11 +53,7 @@ function Home() {
 
         getInfo();
 
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        // window.addEventListener('scroll', handleScrollAnimation);
 
     }, []);
 
@@ -84,13 +79,16 @@ function Home() {
 
     return (
         <div className='position-relative'>
-            <div className='reason-container w-100 d-flex'>
+            <div className='reason-container w-100 d-flex' data-aos="fade-down"
+                data-aos-duration="2000">
                 <div className='col-sm-12 col-md-12 col-lg-1'></div>
                 <div className='col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center align-items-center reason-content'>
                     <div className='d-flex justify-content-between flex-column home-intro'>
                         <h3 className='mb-4'>震災/津波/災害/戦争</h3>
                         <h5>
-                            家族との旅行写真、友人からの温かい手紙、子供たちの成長記録など、これらの品々は私たちの心の宝物でした。これらの思い出は、日常の中で私たちに笑顔をもたらし、時には励ましの力を与えてくれるものでした。それが一瞬にして失われてしまったことは、言葉にできないほどの喪失感をもたらしました。
+                            東日本大震災で・写真や手紙など <br />
+                            本来・想いを残してきたツールは<br />
+                            津波で跡形もなく消えてなくなる<br />
                         </h5>
 
                         <h3 className='en mt-5'>OMOWILL</h3>
@@ -106,44 +104,33 @@ function Home() {
             </div>
 
             <div className='ability-container'>
-                <div className='home-intro home-ability'>
+                <div className='home-intro home-ability' data-aos="fade-up">
                     <div className='d-flex justify-content-center'>
                         <h3 className='en'>OMOWILL</h3>
                         <h3>でできること</h3>
                     </div>
-                    <h6 className='en text-center fw-bold'>Ability</h6>
-                    {
-                        mobileFlg ? (
-                            <h5 className='text-left ability-des'>
-                                想い出を未来に繋げるために。
-                                大切な記憶を守ります。
-                                いつでも、どこでも、大切なメッセージを届けます。
-                                人生の重要な瞬間を、永遠に残すために。</h5>
-                        ) : (<h5 className='text-center ability-des'>
-                            想い出を未来に繋げるために。<br />
-                            大切な記憶を守ります。<br />
-                            いつでも、どこでも、大切なメッセージを届けます。<br />
-                            人生の重要な瞬間を、永遠に残すために。</h5>)
-                    }
-
+                    {/* <h6 className='en'>Ability</h6> */}
+                    <h5 className='pb-5'>OMOWlLLでは以下の3つのことができます。</h5>
                 </div>
 
                 <Ability />
 
-                <div className='sample-pattens-row container'>
+                <div className='sample-pattens-row container' data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1500">
                     <div className="w-100">
                         <div className="w-100 d-flex mt-3">
                             <div className="w-100 border pt-4 pb-4 cursor-pointer">
-                                <h4 className='fw-bold m-0'>臨終および出生時のサンプル</h4>
+                                <h4 className='fw-bold'>臨終および出生時のサンプル</h4>
                             </div>
                         </div>
 
                         <ul className="nav nav-tabs nav-justified">
                             <li className="nav-item">
-                                <a className="nav-link active" data-bs-toggle="tab" href="#home"><h5 className='fw-bold m-0'>動画見本</h5></a>
+                                <a className="nav-link active" data-bs-toggle="tab" href="#home"><h5 className='fw-bold'>動画見本</h5></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" data-bs-toggle="tab" href="#menu1"><h5 className='fw-bold m-0'>PDF見本</h5></a>
+                                <a className="nav-link" data-bs-toggle="tab" href="#menu1"><h5 className='fw-bold'>PDF見本</h5></a>
                             </li>
                         </ul>
 
@@ -195,7 +182,7 @@ function Home() {
             </div>
 
             <div className='container ability-container price-container'>
-                <div className='home-intro home-ability'>
+                <div className='home-intro home-ability' data-aos="fade-up">
                     <div className='d-flex justify-content-center'>
                         <h3>動画や手紙の閲覧について</h3>
                     </div>
@@ -203,26 +190,30 @@ function Home() {
                 </div>
 
                 <div className='d-flex w-100 ability-card-content'>
-                    <div className='border d-flex w-100 w-md-50 flex-column  card-content'>
-                        <h6 className='en en-card-title'>Free</h6>
-                        <h1 className='card-number'>01</h1>
+                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content' data-aos-delay="200" data-aos="fade-left">
+                        <div className='d-flex justify-content-between pb-5'>
+                            <h6 className='en mt-4'>Free</h6>
+                            <h1 className='card-number'>01</h1>
+                        </div>
 
-                        <h4 className='fw-bold'>PDFの発行</h4>
-                        <h5 className='fw-bold'>「亡くなった時」 「生誕時」のメッセージどちらも動画または手紙の登録時にログインID・PASSの記載されたPDFを発行</h5>
-                        <h6>そちらをメールなどで・ご家族やご遺族に分かるように保管・取り置いて・サイトよりマイページで閲覧可能です。</h6><br />
+                        <h4 className='mt-5'>PDFの発行</h4>
+                        <h5 className='fw-bold my-4'>「亡くなった時」 「生誕時」のメッセージどちらも動画または手紙の登録時にログインID・PASSの記載されたPDFを発行</h5>
+                        <h6>そちらをメールなどで・ご家族やご遺族に分かるように保管・取り置いて・サイトよりマイページで閲覧可能です。</h6>
 
                         <div className='d-flex justify-content-between align-items-center gap-3 card-bottom'>
                             <Link to="/service" onClick={() => switchTab(2)} className='ability-detail-link'><i className="fa fa-caret-right" aria-hidden="true" />&nbsp;&nbsp;詳細情報</Link>
                             <button className='btn btn-primary bg-primary text-white' onClick={() => gotoURL('/register')}>無料</button>
                         </div>
                     </div>
-                    <div className='border d-flex w-100 w-md-50 flex-column  card-content'>
-                        <h6 className='en en-card-title'>Charge</h6>
-                        <h1 className='card-number'>02</h1>
+                    <div className='border d-flex w-100 w-md-50 flex-column justify-content-between card-content' data-aos-delay="250" data-aos="fade-left">
+                        <div className='d-flex justify-content-between pb-5'>
+                            <h6 className='en mt-4'>Charge</h6>
+                            <h1 className='card-number'>02</h1>
+                        </div>
 
-                        <h4 className='fw-bold'>ご家族やご遺族からの閲覧申請</h4>
+                        <h4 className='mt-5'>ご家族やご遺族からの閲覧申請</h4>
 
-                        <h5 className='fw-bold'>動画や手紙があるが・ログイン情報が不明などの場合ご家族やご遺族からの閲覧申請が可能</h5>
+                        <h5 className='fw-bold my-4'>動画や手紙があるが・ログイン情報が不明などの場合ご家族やご遺族からの閲覧申請が可能</h5>
 
                         <h6>まず・動画や手紙が存在するか・確認の申請 (無料) を行い存在した場合には・閲覧の申請手続きができます。ご家族やご遺族書類の提出を頂き・書類確認の等のための事務手数料 (550円税込)を頂戴いたします。</h6>
 
@@ -234,7 +225,16 @@ function Home() {
                 </div>
             </div>
 
-            <div className='bg-secondary info-container'>
+            {/* <div className='container booking-header-container' data-aos="fade-up">
+                <div className='d-flex justify-content-between flex-column'>
+                    <h3>まずは・想いを残そう!</h3>
+                    <img src={logo1} alt="img" />
+                    <button className='btn btn-primary' onClick={gotoRegister}><i className='fa fa-user-plus'></i>&nbsp;&nbsp;&nbsp;ご利用登録</button>
+                </div>
+            </div> */}
+
+
+            <div className='bg-secondary info-container' data-aos="fade-up">
                 <div className='info-title-container'>
                     <h3 className='fw-bold'>お知らせ</h3>
                     <h6 className='en'>Information</h6>
@@ -252,7 +252,7 @@ function Home() {
                                     </div>
                                 ) : (
                                     infoData.map((item, index) => (
-                                        <Link to="/info" className="list-group-item" key={index}>
+                                        <Link to="/info" className="list-group-item" key={index} data-aos-delay={(index + 250) * 1.3} data-aos="fade-left">
                                             <div className='d-flex info-flex'>
                                                 <div className='info-date-area'>
                                                     <dt className='info-date number'><span className='info-year'>{new Date(item.date).getFullYear()}</span>{resetDate(new Date(item.date).getMonth() + 1)}.{resetDate(new Date(item.date).getDate())}</dt>
