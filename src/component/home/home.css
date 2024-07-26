@@ -57,8 +57,9 @@
     }
 }
 
-.home-intro img {
-    height: 42px;
+.font-logo {
+    height: 36px;
+    margin-bottom: 5px;
 }
 
 .home-intro button {
@@ -83,11 +84,6 @@
 
 .ability-des {
     padding: 28px 0px 70px;
-}
-
-.home-ability img {
-    height: 33px;
-    margin-top: 10px;
 }
 
 .ability-card-content .border {

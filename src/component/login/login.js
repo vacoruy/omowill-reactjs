@@ -83,7 +83,7 @@ function Login() {
                             津波で跡形もなく消えてなくなる<br />
                         </h5>
 
-                        <h3 className='en mt-5'>OMOWILL</h3>
+                        <h3 className='en mt-5'><img src={logo} className="font-logo" alt="font-logo"/></h3>
                         <h5>想いを「今」WEB上に残しておく</h5>
                     </div>
                 </div>

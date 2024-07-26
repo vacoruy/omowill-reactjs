@@ -7,8 +7,8 @@ import axios from 'axios';
 import Spinner from '../includes/spinner';
 
 // import { toast } from 'react-toastify';
-// import logo from "../../assets/img/logo-pb.webp";
-import logo1 from "../../assets/img/logo1.webp";
+import logo from "../../assets/img/logo-pb.webp";
+// import logo1 from "../../assets/img/logo1.webp";
 
 import Ability from '../ability/ability';
 import SamplePDF from '../../assets/samplepdf/sample.pdf';
@@ -88,12 +88,13 @@ function Home() {
                 <div className='col-sm-12 col-md-12 col-lg-1'></div>
                 <div className='col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center align-items-center reason-content'>
                     <div className='d-flex justify-content-between flex-column home-intro'>
+                        <h3>想いを 「今」 残す</h3>
                         <h3 className='mb-4'>震災/津波/災害/戦争</h3>
                         <h5>
                             家族との旅行写真、友人からの温かい手紙、子供たちの成長記録など、これらの品々は私たちの心の宝物でした。これらの思い出は、日常の中で私たちに笑顔をもたらし、時には励ましの力を与えてくれるものでした。それが一瞬にして失われてしまったことは、言葉にできないほどの喪失感をもたらしました。
                         </h5>
 
-                        <h3 className='en mt-5'>OMOWILL</h3>
+                        <h3 className='en mt-5'><img src={logo} className="font-logo" alt="font-logo"/></h3>
                         <h5>想いを「今」WEB上に残しておく</h5>
                         <div>
                             <button className='btn btn-primary w-fit-content' onClick={gotoRegister}><i className='fa fa-user-plus'></i>&nbsp;&nbsp;&nbsp;ご利用登録</button>
@@ -108,7 +109,7 @@ function Home() {
             <div className='ability-container'>
                 <div className='home-intro home-ability'>
                     <div className='d-flex justify-content-center'>
-                        <h3 className='en'>OMOWILL</h3>
+                        <h3 className='en'><img src={logo} className="font-logo"  alt="font-logo"/></h3>
                         <h3>でできること</h3>
                     </div>
                     <h6 className='en text-center fw-bold'>Ability</h6>

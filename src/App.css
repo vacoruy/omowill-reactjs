@@ -27,9 +27,15 @@ body {
     font-family: var(--font-number) !important;
 }
 
+
 h1 {
     font-size: 100px;
     margin: 0;
+}
+
+.font-logo-right {
+    height: 100px;
+
 }
 
 h2 {
