@@ -41,8 +41,7 @@
     }
 
     .ability-container,
-    .booking-header-container,
-    .info-content {
+    .booking-header-container {
         padding-inline: 40px;
     }
 
@@ -81,6 +80,40 @@
 }
 
 @media (max-width: 1200px) {
+    .card-number {
+        font-size: 130px;
+        right: 38px;
+        top: 10px;
+    }
+
+    .en-card-title {
+        top: 30px;
+        left: 35px;
+    }
+
+    h3 {
+        font-size: 34px;
+    }
+
+    .reason-container {
+        padding-inline: 100px;
+    }
+
+    .reason-container .reason-content {
+        order: 2;
+        width: 100%;
+    }
+
+    .ability-container,
+    .booking-header-container,
+    .info-container {
+        padding-inline: 100px;
+    }
+
+    .card-content {
+        padding: 270px 32px 25px;
+    }
+
     .my-container {
         flex-direction: column !important;
     }
@@ -124,10 +157,6 @@
         margin-top: 20px;
     }
 
-    .card-content {
-        padding: 2em;
-    }
-
     .price-container {
         width: 100% !important;
         max-width: 100% !important;
@@ -142,7 +171,7 @@
     }
 
     .info-container {
-        padding-inline: 25px;
+        padding-inline: 40px;
     }
 
     .info-content {
@@ -204,6 +233,18 @@
 }
 
 @media (max-width: 992px) {
+
+    .ability-container,
+    .booking-header-container,
+    .info-container {
+        padding-inline: 40px;
+    }
+
+    .reason-container {
+        padding: 0 40px 105px;
+        text-align: left;
+    }
+
     .price-container {
         margin-top: 80px;
     }
@@ -283,6 +324,50 @@
 }
 
 @media (max-width: 768px) {
+    h3 {
+        letter-spacing: 2px;
+        font-weight: 900;
+        margin-bottom: 0.4em;
+    }
+
+    h5 {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 2em;
+    }
+
+    .ability-container,
+    .booking-header-container,
+    .info-container {
+        padding-inline: 40px;
+    }
+
+    .ability-des {
+        padding: 14px 0px 50px;
+    }
+
+    .card-number {
+        font-weight: 600;
+        font-size: 114px;
+        position: absolute;
+        right: 26px;
+        top: 0px;
+    }
+
+    .card-content {
+        padding: 160px 20px 25px 20px;
+    }
+
+    .en-card-title {
+        top: 16px;
+        left: 26px;
+        padding: 11px 0 28px;
+    }
+
+    .card-bottom {
+        margin: 40px 0 10px;
+    }
+
     .born-list .list-group-item {
         padding: 40px;
     }
@@ -305,30 +390,6 @@
 
     .home-ability .way_learning_detail {
         padding: 0 0 40px;
-    }
-
-    h1 {
-        font-size: 80px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 20px !important;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 14px;
-    }
-
-    h6 {
-        font-size: 14px;
     }
 
     .home-ability img {
@@ -405,28 +466,9 @@
 }
 
 @media (max-width: 576px) {
-    .reason-container {
-        padding: 0 40px 105px;
-        text-align: left;
-    }
-
     h3 {
-        font-size: 7vw !important;
-        letter-spacing: 2px;
-        font-weight: 900;
-        margin-bottom: 0.4em;
+        font-size: 7vw;
     }
-
-    h5 {
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 2em;
-    }
-
-    .ability-des {
-        padding: 14px 0px 50px;
-    }
-
 
     .make-will {
         padding: 60px 20px;
@@ -468,13 +510,7 @@
         height: 35px;
     }
 
-    .card-number {
-        font-weight: 600;
-        font-size: 114px;
-        position: absolute;
-        right: 26px;
-        top: 0px;
-    }
+
 
     .home-ability img {
         height: 22px;
@@ -484,20 +520,6 @@
     .home-ability .way_learning_detail {
         font-size: 14px;
         padding: 0 0 30px;
-    }
-
-    .card-content {
-        padding: 160px 20px 25px 20px;
-    }
-
-    .en-card-title {
-        top: 16px;
-        left: 26px;
-        padding: 11px 0 28px;
-    }
-
-    .card-bottom {
-        margin: 40px 0 10px;
     }
 
     .booking-header-container {
@@ -549,8 +571,8 @@
 
     .info-container .arrow-btn {
         position: absolute;
-        bottom: 27px;
-        right: 16px;
+        bottom: 16px;
+        right: 6px;
     }
 
     .contact-container input,

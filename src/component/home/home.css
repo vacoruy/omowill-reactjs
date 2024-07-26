@@ -12,14 +12,6 @@
 
 
 @media (max-width: 991px) {
-
-    .ability-container,
-    .booking-header-content,
-    .info-container,
-    .info-content {
-        padding-inline: 10px;
-    }
-
     .ability-card-content {
         flex-direction: column;
     }
@@ -58,11 +50,6 @@
     .reason-container {
         flex-direction: column;
         height: auto;
-    }
-
-    .reason-container .reason-content {
-        order: 2;
-        width: 100%;
     }
 
     .reason-container .reason-right-content {
@@ -112,6 +99,7 @@
     font-weight: 500;
     font-size: 16px;
     padding: 0 0 60px;
+    text-align: center;
 }
 
 .card-content {
