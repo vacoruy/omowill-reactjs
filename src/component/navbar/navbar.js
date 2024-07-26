@@ -44,12 +44,16 @@ function Navbar() {
     }, [omowillAuth.isAuth, windowWidth]);
 
     const handleScroll = () => {
-        const offset = window.scrollY;
-        if (offset > 50) {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > window.previousScrollY) {
             setScrolled(true);
-        } else {
+        } else if (currentScrollY < window.previousScrollY) {
             setScrolled(false);
+
         }
+
+        window.previousScrollY = currentScrollY;
     };
 
     const logout = () => {
@@ -63,10 +67,23 @@ function Navbar() {
         $(".nav-link-btn1").removeClass('nav-pr-0');
         $(".nav-link-btn2").removeClass('nav-ps-0');
     }
+
+    const handleBgStyle = {
+        backgroundColor: scrolled ? 'transparent' : 'white',
+        transition: 'background-color 0.5s ease' // Add transition for smooth background color change
+    };
+
+    const headingStyle = {
+        opacity: scrolled ? 0 : 1,
+        visibility: scrolled ? 'hidden' : 'visible',
+        transition: 'opacity 0.5s ease, visibility 0.5s ease' // Add transition for smooth hide/show effect
+    };
+
+
     return (
-        <nav className="navbar navbar-expand-xl fixed-top" style={{ backgroundColor: scrolled ? 'transparent' : 'white' }}>
+        <nav className="navbar navbar-expand-xl fixed-top" style={handleBgStyle}>
             <div className="container-fluid">
-                <Link className="navbar-brand navbar-response" to="/">
+                <Link className="navbar-brand navbar-response" to="/" style={headingStyle}>
                     <div className="flex-nowrap flex-logo" style={{ alignItems: "center" }}>
                         <img className="p-0 logo" src={logo} alt="img" />
                     </div>
@@ -83,7 +100,7 @@ function Navbar() {
                 <div className='collapse navbar-collapse m-2' id="collapsibleNavbar">
                     <div className='me-auto'></div>
                     <ul className="navbar-nav">
-                        <li className="nav-item" style={{ display: scrolled ? 'none' : 'inherit' }}>
+                        <li className="nav-item" style={headingStyle}>
                             <Link
                                 className="nav-link text-dark font-primary"
                                 to="/service"
@@ -91,7 +108,7 @@ function Navbar() {
                                 <h6>サービス</h6>
                             </Link>
                         </li>
-                        <li className="nav-item" style={{ display: scrolled ? 'none' : 'inherit' }}>
+                        <li className="nav-item" style={headingStyle}>
                             <Link
                                 className="nav-link text-dark font-primary"
                                 to="/info"
@@ -99,7 +116,7 @@ function Navbar() {
                                 <h6>お知らせ</h6>
                             </Link>
                         </li>
-                        <li className="nav-item dropdown" style={{ display: scrolled ? 'none' : 'inherit' }}>
+                        <li className="nav-item dropdown" style={headingStyle}>
                             <Link
                                 className="nav-link text-dark font-primary"
                                 to="/requestFileView"
@@ -108,7 +125,7 @@ function Navbar() {
                             </Link>
                         </li>
 
-                        <li className="nav-item dropdown" style={{ display: scrolled ? 'none' : 'inherit' }}>
+                        <li className="nav-item dropdown" style={headingStyle}>
                             <Link
                                 className="nav-link text-dark font-primary"
                                 to="/pdfOrVideoView"

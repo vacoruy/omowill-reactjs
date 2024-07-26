@@ -469,6 +469,12 @@
     .auth-redirect-link>a>p {
         margin: 25px 10px !important;
     }
+
+    
+    .gotoTop {
+        bottom: 35px;
+        right: 20px;
+    }
 }
 
 @media (max-width: 576px) {
