@@ -107,7 +107,7 @@ function Home() {
 
             <div className='ability-container'>
                 <div className='home-intro home-ability'>
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center ability-header-title'>
                         <h3 className='en'><img src={logo} className="font-logo"  alt="font-logo"/></h3>
                         <h3>でできること</h3>
                     </div>

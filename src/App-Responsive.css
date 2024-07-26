@@ -485,6 +485,11 @@
         font-size: 7vw;
     }
 
+    .ability-header-title {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .font-logo {
         height: 7vw !important;
     }
