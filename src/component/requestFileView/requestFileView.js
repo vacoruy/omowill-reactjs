@@ -8,9 +8,12 @@ import axios from 'axios';
 import $ from 'jquery';
 import Spinner from '../includes/spinner';
 import { AuthContext } from '../../context/AuthProvider';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckoutForm from './checkoutform';
-import { Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
+
+import { PaymentForm, CreditCard } from 'react-square-web-payments-sdk';
+
+// import CheckoutForm from './checkoutform';
+// import { Elements } from '@stripe/react-stripe-js';
 
 const STEP = {
     'FIRST': 'first_step',
@@ -19,8 +22,11 @@ const STEP = {
 }
 
 function RequestFileView() {
-    const [stripePromise, setStripePromise] = useState(null);
-    const [clientSecret, setClientSecret] = useState('');
+    // const [stripePromise, setStripePromise] = useState(null);
+    // const [clientSecret, setClientSecret] = useState('');
+    const applicationID = process.env.REACT_APP_ID;
+    const locationID = process.env.REACT_APP_LOCATION_ID;
+
 
     const { setPaidAuth } = useContext(AuthContext);
     const getDate = () => {
@@ -68,6 +74,8 @@ function RequestFileView() {
     const [activeStep, setStep] = useState(STEP.FIRST);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+
+    const [paymentStatus, setPaymentStatus] = useState('');
 
     const reqeustUserInfo = async () => {
         if (requestUser.firstname === '') {
@@ -237,29 +245,76 @@ function RequestFileView() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        getStripeKey();
-        getPaymentIntent();
+        // getStripeKey();
+        // getPaymentIntent();
     }, []);
 
-    const getPaymentIntent = async () => {
+    const savePayerData = async () => {
         try {
-            const { data } = await axios.post(process.env.REACT_APP_API_URL + '/create-payment-intent', {});
+            const response = await axios.post(process.env.REACT_APP_API_URL + '/payForReadDoc', myConfirmData);
 
-            setClientSecret(data.clientSecret);
+            myConfirmData.id = response.data.data;
+
+            var tmp = paidUserIdx;
+            tmp.push(myConfirmData.user_id);
+
+            setCookieOfReqUser({
+                auth: true,
+                value: tmp
+            });
+
+            navigate('/pdfOrVideoView');
         } catch (error) {
-
+            toast.error('ネットワーク接続を確認してください。');
         }
     }
 
-    const getStripeKey = async () => {
-        try {
-            const response = await axios.post(process.env.REACT_APP_API_URL + '/payConfig', {});
+    const handlePayment = async (token) => {
+        // Implement your payment handling logic here
+        // For example, send the token to your server for further processing
+        setPaymentStatus('お支払い処理中...');
 
-            setStripePromise(loadStripe(response.data.publishableKey));
-        } catch (error) {
-            console.log(error);
+        // Example server request
+        const response = await fetch(process.env.REACT_APP_API_URL + '/process-payment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                sourceId: token.token,
+            }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            setPaymentStatus('支払い完了!');
+
+            savePayerData();
+        } else {
+            setPaymentStatus('支払いに失敗しました。もう一度お試しください。');
         }
-    }
+    };
+
+    // const getPaymentIntent = async () => {
+    //     try {
+    //         const { data } = await axios.post(process.env.REACT_APP_API_URL + '/create-payment-intent', {});
+
+    //         setClientSecret(data.clientSecret);
+    //     } catch (error) {
+
+    //     }
+    // }
+
+    // const getStripeKey = async () => {
+    //     try {
+    //         const response = await axios.post(process.env.REACT_APP_API_URL + '/payConfig', {});
+
+    //         setStripePromise(loadStripe(response.data.publishableKey));
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return (
         <div className="position-relative request-view">
@@ -567,13 +622,25 @@ function RequestFileView() {
                                 <div className="card p-5 request-pdf-form">
                                     <h3 className="mb-5">300円有料手続決済</h3>
                                     <div className='form-group'>
-                                        {
-                                            stripePromise && clientSecret && (
-                                                <Elements stripe={stripePromise} options={{ clientSecret }}>
-                                                    <CheckoutForm confirmData = {myConfirmData} paidUserIdx = {paidUserIdx}/>
-                                                </Elements>
-                                            )
-                                        }
+                                        <PaymentForm
+                                            applicationId={applicationID}
+                                            cardTokenizeResponseReceived={(token, verifiedBuyer) => handlePayment(token)}
+                                            locationId={locationID}
+                                        >
+                                            <CreditCard
+                                                buttonProps={{
+                                                    css: {
+                                                        backgroundColor: "#363030",
+                                                        fontSize: "14px",
+                                                        color: "#fff",
+                                                        "&:hover": {
+                                                            backgroundColor: "#6c6c6c",
+                                                        },
+                                                    },
+                                                }}
+                                            />
+                                        </PaymentForm>
+                                        <p>{paymentStatus}</p>
                                     </div>
                                 </div>
                             </div>

@@ -1,27 +1,44 @@
-const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY, {
-    apiVersion: "2024-04-10"
-})
+const { Client, Environment } = require('square');
+const { randomUUID } = require('crypto');
+require('dotenv').config();
 
-exports.config = async(req, res) => {
-    res.send({
-        publishableKey: process.env.REACT_APP_STRIPE_PUBLISH_KEY
-    })
-}
+// const { paymentsApi } = new Client({
+//     accessToken: process.env.REACT_APP_SQUARE_ACCESS_TOKEN,
+//     environment: Environment.Sandbox, // or Environment.Production
+// });
 
-exports.paymentIntent = async(req, res) => {
-    try {
-        const paymentIntent = await stripe.paymentIntents.create({
-            currency: 'jpy',
-            amount: 300,
-            automatic_payment_methods: {
-                enabled: true
-            },
-        });
+const client = new Client({
+    accessToken: process.env.REACT_APP_SQUARE_ACCESS_TOKEN, // Ensure you have this variable in your .env file
+    environment: Environment.Sandbox, // or Environment.Production
+  });
 
-        res.send({clientSecret: paymentIntent.client_secret})
-    } catch (error) {
-        return res.status(400).send({
-            error: error
-        })
+const paymentsApi = client.paymentsApi;
+
+exports.paymentIntent = async (req, res) => {
+    if (req.method === 'POST') {
+        try {
+            const { sourceId } = req.body;
+
+            if (!sourceId) {
+                return res.status(400).json({ error: 'sourceId and amount are required' });
+            }
+
+            const { result } = await paymentsApi.createPayment({
+                idempotencyKey: randomUUID(),
+                sourceId: sourceId,
+                amountMoney: {
+                    currency: 'USD',
+                    amount: 1,
+                },
+            });
+
+            console.log(result);
+            res.status(200).json(result);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: error.message });
+        }
+    } else {
+        res.status(405).json({ error: 'Method Not Allowed' });
     }
-}
+};
