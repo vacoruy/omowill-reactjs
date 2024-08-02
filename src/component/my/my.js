@@ -70,14 +70,14 @@ function MyPage() {
                 <div className="tab-pane container active" id="whenDeath">
 
                     <div className='d-flex flex-column'>
-                        <h4 className='w-100 border pt-4 pb-4 fw-bold cursor-pointer my-content-title'>死亡時に残すメッセージ</h4>
+                        <h4 className='w-100 border pt-4 pb-4 fw-bold cursor-pointer my-content-title m-0'>死亡時に残すメッセージ</h4>
 
                         <ul className="nav nav-tabs nav-justified my-sub-tabs-header">
                             <li className="nav-item">
-                                <a className="nav-link active pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#willVideo"><h5 className='fw-bold'>動画</h5></a>
+                                <a className="nav-link active pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#willVideo"><h5 className='fw-bold m-0'>動画</h5></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#willPDF"><h5 className='fw-bold'>PDF</h5></a>
+                                <a className="nav-link pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#willPDF"><h5 className='fw-bold m-0'>PDF</h5></a>
                             </li>
                         </ul>
 
@@ -131,14 +131,14 @@ function MyPage() {
                 </div>
                 <div className="tab-pane container fade" id="whenBirth">
                     <div className='d-flex flex-column'>
-                        <h4 className='w-100 border pt-4 pb-4 fw-bold cursor-pointer my-content-title'>生誕時に残すメッセージ</h4>
+                        <h4 className='w-100 border pt-4 pb-4 fw-bold cursor-pointer my-content-title m-0'>生誕時に残すメッセージ</h4>
 
                         <ul className="nav nav-tabs nav-justified my-sub-tabs-header">
                             <li className="nav-item">
-                                <a className="nav-link active pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#bornVideo"><h5>動画</h5></a>
+                                <a className="nav-link active pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#bornVideo"><h5 className='m-0'>動画</h5></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#bornPDF"><h5>PDF</h5></a>
+                                <a className="nav-link pt-4 pb-4 fw-bold" data-bs-toggle="tab" href="#bornPDF"><h5 className='m-0'>PDF</h5></a>
                             </li>
                         </ul>
 

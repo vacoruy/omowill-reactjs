@@ -64,14 +64,14 @@ function RequestFileView() {
         birth: getDate(),
         address: '',
         email: '',
-        relation_file: null,
-        death_file: null,
+        death_relation_filename: [],
+        death_relation_file: [],
         user_id: 0,
         pay_state: true,
     });
 
     const [paidUserIdx, setPaidUserIdx] = useState([]);
-    const [activeStep, setStep] = useState(STEP.FIRST);
+    const [activeStep, setStep] = useState(STEP.SECOND);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -177,7 +177,7 @@ function RequestFileView() {
             toast.error('メールの形式が正しくありません。');
             // } else if (!myConfirmData.relation_file) {
             //     toast.error('遺族との関係がわかる書類をアップロードしてください。');
-            // } else if (!myConfirmData.death_file) {
+            // } else if (!myConfirmData.death_relation_file) {
             //     toast.error('死亡報告書または死体検眼書をアップロードしてください。');
         } else if (!$('#myInfoCheckBox').prop('checked')) {
             toast.error('サービス規約に同意する必要があります。');
@@ -185,43 +185,70 @@ function RequestFileView() {
             toast.error('300円の有料手続き決済を行う必要があります。');
         } else {
             setIsLoading(true);
+
+            const formData = new FormData();
+            formData.append('file', myConfirmData.death_relation_file[0]);
+            formData.append('file', myConfirmData.death_relation_file[1]);
+
+            console.log(myConfirmData.death_relation_file)
+
             try {
-                const response = await axios.post(process.env.REACT_APP_API_URL + '/checkPayStatu', myConfirmData);
+                const uploadRes = await axios.post(process.env.REACT_APP_API_URL + '/multiFileUpload', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
 
-                if (response.data.message === 200) {
-                    if (response.data.data.length === 0) {
-                        showPayPage();
-                    } else {
-                        const tmp = [];
-                        var flg = false;
+                if (Number(uploadRes.status) === 200) {
+                    setMyConfirmData({
+                        death_relation_filename: uploadRes.filename
+                    })
+                    try {
+                        const response = await axios.post(process.env.REACT_APP_API_URL + '/checkPayStatu', myConfirmData);
 
-                        //check if request user is exist or not
-                        response.data.data.forEach(ele => {
-                            tmp.push(ele.user_id);
-                            if (ele.user_id === myConfirmData.user_id) {
-                                flg = true;
+                        if (response.data.message === 200) {
+                            if (response.data.data.length === 0) {
+                                showPayPage();
+                            } else {
+                                const tmp = [];
+                                var flg = false;
+
+                                //check if request user is exist or not
+                                response.data.data.forEach(ele => {
+                                    tmp.push(ele.user_id);
+                                    if (ele.user_id === myConfirmData.user_id) {
+                                        flg = true;
+                                    }
+                                });
+
+                                if (!flg) {
+                                    showPayPage();
+                                } else {
+                                    setPaidUserIdx(tmp);
+                                    setCookieOfReqUser({
+                                        auth: true,
+                                        value: tmp
+                                    });
+                                }
+
                             }
-                        });
-
-                        if (!flg) {
-                            showPayPage();
-                        } else {
-                            setPaidUserIdx(tmp);
-                            setCookieOfReqUser({
-                                auth: true,
-                                value: tmp
-                            });
                         }
 
+                        setIsLoading(false);
+                    } catch (error) {
+                        toast.error('ネットワーク接続を確認してください。');
+
+                        setIsLoading(false);
                     }
                 }
-
-                setIsLoading(false);
             } catch (error) {
-                toast.error('ネットワーク接続を確認してください。');
-
-                setIsLoading(false);
+                console.log(error)
             }
+
+
+
+
+
 
             // try {
             //     const response = await axios.post(process.env.REACT_APP_API_URL + '/payForReadDoc', myConfirmData);
@@ -295,6 +322,17 @@ function RequestFileView() {
             setPaymentStatus('支払いに失敗しました。もう一度お試しください。');
         }
     };
+
+    const multiFileUpload = async (e) => {
+        let allFileInfo = myConfirmData.death_relation_file;
+
+        allFileInfo.push(e.target.files[0])
+
+        setMyConfirmData((prev) => ({
+            ...prev,
+            death_relation_file: allFileInfo
+        }));
+    }
 
     // const getPaymentIntent = async () => {
     //     try {
@@ -575,10 +613,7 @@ function RequestFileView() {
                                                 className="form-control"
                                                 placeholder="遺族との関係が分かる書類(登記簿謄本など)"
                                                 name='relation_file'
-                                                onChange={(e) => setMyConfirmData((prev) => ({
-                                                    ...prev,
-                                                    relation_file: e.target.files[0]
-                                                }))}
+                                                onChange={multiFileUpload}
                                             />
                                         </div>
                                         <div className="input-group">
@@ -586,11 +621,8 @@ function RequestFileView() {
                                                 type="file"
                                                 className="form-control"
                                                 placeholder="死亡届出書、 死体検案書"
-                                                name='death_file'
-                                                onChange={(e) => setMyConfirmData((prev) => ({
-                                                    ...prev,
-                                                    death_file: e.target.files[0]
-                                                }))}
+                                                name='death_relation_file'
+                                                onChange={multiFileUpload}
                                             />
                                         </div>
                                         <div className="input-group">

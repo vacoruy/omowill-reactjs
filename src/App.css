@@ -94,6 +94,10 @@ a>button>h6 {
     color: white;
 }
 
+button:active {
+    background-color: var(--primary) !important;
+}
+
 input,
 input:hover,
 input:focus,
@@ -164,6 +168,19 @@ textarea:active {
     background-color: #a0a0a0;
 }
 
+.form-check-input, .form-check-input:active, .form-check-input:focus, .form-check-input:hover {
+    background-color: transparent !important;
+    border: 1px solid var(--primary) !important;
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+    color: var(--primary) !important;
+}
+
+.form-check-input:checked[type=checkbox] {
+    background-color: var(--primary) !important;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -189,7 +206,7 @@ input[type="checkbox"] {
 
 .navbar .btn-primary {
     border-radius: 30px;
-}
+} 
 
 .main-container {
     padding-top: 100px;
